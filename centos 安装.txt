@@ -1,3 +1,9 @@
 yum -y install epel-release
 yum -y update
 yum -y install gcc automake autoconf libtool make m2crypto autoconf libtool curl curl-devel zlib-devel openssl-devel perl perl-devel cpio expat-devel gettext-devel pcre-devel asciidoc xmlto git
+
+git clone https://github.com/shadowsocks/shadowsocks-libev.git
+cd shadowsocks-libev
+git submodule update --init --recursive
+./autogen.sh && ./configure && make
+sudo make install
